@@ -1,0 +1,74 @@
+import java.util.*;
+
+public class B {
+
+	public static class NODE {
+
+		double x;
+		double y;
+
+		public NODE(double a, double b) {
+			x = a;
+			y = b;
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner in = new Scanner(System.in);
+		int cases = in.nextInt();
+		double dist = 0;
+
+		while ((cases--) > 0) {
+
+			in.nextLine();
+			double min = 5000000;
+			int freckles = in.nextInt();
+			ArrayList<NODE> nodes = new ArrayList<NODE>();
+
+			while ((freckles--) > 0) {
+
+				double a = in.nextDouble();
+				double b = in.nextDouble();
+
+				nodes.add(new NODE(a, b));
+
+			}
+
+			for (int i = 0; i < nodes.size(); i++) {
+				
+				double tempx1 = nodes.get(i).x;
+				double tempy1 = nodes.get(i).y;
+				double[] distances = new double[nodes.size()];
+
+				for (int j = 0; j < nodes.size(); j++) {
+
+					double tempx2 = nodes.get(j).x;
+					double tempy2 = nodes.get(j).y;
+					double temp = Math.sqrt(Math.pow(tempy2 - tempy1, 2) + Math.pow(tempx2 - tempx1, 2));
+					distances[j] = temp;
+
+				}
+				
+				for(int j = 0; j<distances.length; j++){
+					if((distances[j]>0)&&(distances[j]<min)){
+						min = distances[j];
+					}
+				}
+				
+				dist += min;
+				min = 5000000;
+			}
+
+			
+
+			System.out.format("%.2f", dist);
+			if (cases > 0)
+				System.out.println();
+			dist = 0;
+		}
+
+	}
+
+}

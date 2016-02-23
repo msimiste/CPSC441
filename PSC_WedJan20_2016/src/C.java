@@ -1,0 +1,63 @@
+import java.util.*;
+
+public class C {
+
+	public static void main(String[] args) {
+
+		Scanner in = new Scanner(System.in);
+
+		int lines = in.nextInt();
+		int[] arr = new int[32];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = 9;
+		}
+		while ((lines--) > 0) {
+
+			String out = "";
+			String temp = in.next();
+			if (temp.equals("SET")) {
+				arr[in.nextInt()] = 1;
+			} else if (temp.equals("CLEAR")) {
+				arr[in.nextInt()] = 1;
+			} else if (temp.equals("AND")) {
+
+				int first = in.nextInt();
+				int sec = in.nextInt();
+
+				if (arr[first] < 9 && arr[sec] < 9) {
+
+					arr[first] = (arr[first] + arr[sec]) / 2;
+
+				}
+			} else if (temp.equals("OR")) {
+				int first = in.nextInt();
+				int sec = in.nextInt();
+
+				if (arr[first] < 9 && arr[sec] < 9) {
+
+					int b = arr[first] + arr[sec];
+					if (b > 0) {
+						arr[first] = 1;
+					} else {
+						arr[first] = 0;
+					}
+
+				} else if (arr[first] == 1 || arr[sec] == 1) {
+
+					arr[first] = 1;
+				}
+			}
+			
+			for(int i =arr.length-1; i>=0; i--){
+		
+				if(arr[i]>1)
+					out += "?"; 
+				else 
+					out += arr[i];
+			}
+			System.out.println(out);
+		}
+
+	}
+
+}

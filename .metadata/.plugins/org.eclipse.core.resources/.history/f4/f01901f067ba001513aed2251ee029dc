@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class B {	
+	
+	
+	public static class NODE {
+		
+		double x;
+		double y;
+		
+		public NODE(double a, double b){
+			x = a;
+			y = b;
+		}
+		
+	}
+
+
+	public static void main(String[] args) {
+
+		Scanner in = new Scanner(System.in);
+		int cases = in.nextInt();
+		double dist = 0;
+		in.next();
+		
+
+		while ((cases--) > 0) {
+		
+			int freckles = in.nextInt();
+			ArrayList<NODE> nodes = new ArrayList<NODE>();
+			while((freckles--)>0){
+				
+				double a = in.nextDouble();
+				double b = in.nextDouble();
+				
+				nodes.add(new NODE(a,b));
+				
+				NODE start = nodes.remove(0);
+				
+				for(int i = 0; i<nodes.size(); i++){
+					
+				}
+				
+			}
+			
+
+		}
+
+	}
+
+
+}

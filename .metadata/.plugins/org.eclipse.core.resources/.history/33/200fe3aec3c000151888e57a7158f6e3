@@ -1,0 +1,101 @@
+import java.util.*;
+import edu.princeton.cs.algs4.*;
+import edu.princeton.cs.algs4.Stack;
+
+public class DepthFirstSearch {
+
+	private boolean marked[];
+	private int edgeTo[];
+	private int count;
+	private int s;
+
+	public DepthFirstSearch(Graph g, int s) {
+		this.s = s;
+		marked = new boolean[g.V()];
+		dfs(g, s);
+	}
+
+	private void dfs(Graph g, int v) {
+		count++;
+		marked[v] = true;
+		for (int w : g.adj(v)) {
+			if (!marked[w]) {
+				
+				edgeTo[w] = v;
+				dfs(g, w);
+			}
+		}
+	}
+	
+	 public boolean marked(int v) {
+	        return marked[v];
+	    }
+	 
+	 /**
+	     * Is there a path between the source vertex <tt>s</tt> and vertex <tt>v</tt>?
+	     * @param v the vertex
+	     * @return <tt>true</tt> if there is a path, <tt>false</tt> otherwise
+	     */
+	    public boolean hasPathTo(int v) {
+	        return marked[v];
+	    }
+
+	    /**
+	     * Returns a path between the source vertex <tt>s</tt> and vertex <tt>v</tt>, or
+	     * <tt>null</tt> if no such path.
+	     * @param v the vertex
+	     * @return the sequence of vertices on a path between the source vertex
+	     *   <tt>s</tt> and vertex <tt>v</tt>, as an Iterable
+	     */
+	    public Iterable<Integer> pathTo(int v) {
+	        if (!hasPathTo(v)) return null;
+	        Stack<Integer> path = new Stack<Integer>();
+	        for (int x = v; x != s; x = edgeTo[x])
+	            path.push(x);
+	        path.push(s);
+	        return path;
+	    }
+
+	 public int count() {
+	        return count;
+	    }
+
+	public static void main(String[] args) {
+		
+		Graph G = new Graph(9);
+
+		g.addEdge(1, 3);
+		g.addEdge(1, 2);
+		g.addEdge(2, 3);
+		g.addEdge(2, 4);
+		g.addEdge(2, 5);
+		g.addEdge(4, 5);
+		g.addEdge(5, 6);
+		g.addEdge(5, 3);
+		g.addEdge(3, 8);
+		g.addEdge(7, 8);
+		g.addEdge(3, 7);
+		
+		int s = 1;
+		
+		DepthFirstSearch dfs = new DepthFirstSearch(G, s);
+       
+		 for (int v = 0; v < G.V(); v++) {
+	            if (dfs.hasPathTo(v)) {
+	                StdOut.printf("%d to %d:  ", s, v);
+	                for (int x : dfs.pathTo(v)) {
+	                    if (x == s) StdOut.print(x);
+	                    else        StdOut.print("-" + x);
+	                }
+	                StdOut.println();
+	            }
+
+	            else {
+	                StdOut.printf("%d to %d:  not connected\n", s, v);
+	            }
+
+	        }
+
+	}
+
+}

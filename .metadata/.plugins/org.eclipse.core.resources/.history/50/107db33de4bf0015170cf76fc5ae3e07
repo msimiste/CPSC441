@@ -1,0 +1,29 @@
+import java.util.*;
+public class D {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		
+		int cases = in.nextInt();
+		
+		while((cases--)>0){
+			in.nextLine();
+			long sum = 0;
+			int kids = in.nextInt();
+			while((kids--)>0)
+			{
+				sum += in.nextLong();
+			}
+			
+			if (sum % kids == 0)
+			{
+				System.out.println("YES");
+			}
+			else
+				System.out.println("NO");
+		}
+		
+
+	}
+
+}

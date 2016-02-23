@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="0" key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel"/>
+	<item value="/home/ugd/msimiste/Desktop/CPSC441/CPSC441Assign2/.git" key="GitSelectRepositoryPage.lastRepository"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/msimiste/CPSC441_Assignment3.git"/>
+		<item value="https://github/msimiste/CPSC441_Assignment3.git"/>
+		<item value="www.github.com:https://github.com/msimiste/CPSC441_Assignment3.git"/>
+		<item value="github.com:https://github.com/msimiste/CPSC441_Assignment3.git"/>
+	</list>
+	<section name="GitImportWizard">
+		<item value="true" key="GitProjectsImportPage.STORE_NESTED_PROJECTS"/>
+	</section>
+</section>

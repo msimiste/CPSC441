@@ -1,0 +1,9 @@
+INDEX VERSION 1.127+/home/ugd/msimiste/Desktop/CPSC441/.metadata/.plugins/org.eclipse.jdt.core
+2307319274.index
+1131433168.index
+627891006.index
+405991092.index
+277853264.index
+1585599795.index
+2776943414.index
+1625637087.index

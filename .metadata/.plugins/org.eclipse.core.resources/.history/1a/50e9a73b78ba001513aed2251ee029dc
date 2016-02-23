@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class B {
+
+	public static class NODE {
+
+		double x;
+		double y;
+		double[] distances;
+
+		public NODE(double a, double b) {
+			x = a;
+			y = b;
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner in = new Scanner(System.in);
+		int cases = in.nextInt();
+		double dist = 0;
+
+		while ((cases--) > 0) {
+
+			in.nextLine();
+			double min = 5000000;
+			int freckles = in.nextInt();
+			ArrayList<NODE> unreachedNodes = new ArrayList<NODE>();
+			ArrayList<NODE> reachedNodes = new ArrayList<NODE>();
+
+			while ((freckles--) > 0) {
+
+				double a = in.nextDouble();
+				double b = in.nextDouble();
+
+				unreachedNodes.add(new NODE(a, b));
+
+			}
+			reachedNodes.add(unreachedNodes.get(0));
+
+		}
+
+	}
+}

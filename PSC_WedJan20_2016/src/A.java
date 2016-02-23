@@ -1,0 +1,36 @@
+import java.util.*;
+public class A {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+		int testCases = in.nextInt();
+		in.nextLine();
+		while((testCases--)>0){
+			
+			String[] recording = in.nextLine().split(" ");
+			Map<String, String> animals = new HashMap<String, String>();
+			
+			while(in.hasNextLine()){
+			String[] temp = in.nextLine().split(" ");
+			if(temp[1].equals("goes")){
+				animals.put(temp[0], temp[2]);
+				
+			}
+			else if(temp[1].equals("does")) break;
+				
+			}
+			
+			String test = "";
+			for(int i =0; i<recording.length; i++){
+				if(!(animals.containsValue(recording[i])))
+					test = test + " "+recording[i];
+					
+			}
+			System.out.println(test.trim());
+			
+		}
+
+	}
+
+}
